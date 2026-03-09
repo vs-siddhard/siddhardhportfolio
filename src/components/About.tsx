@@ -1,6 +1,7 @@
 import { motion, useInView } from 'motion/react';
 import { useRef, useEffect, useState } from 'react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ThreeDCard } from './ThreeDCard';
 
 function CountUpAnimation({ end, duration = 2 }: { end: number; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -67,11 +68,13 @@ export function About() {
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
-              <ImageWithFallback
-                src="/profile-image.png"
-                alt="Shanmukha Siddhard Sai"
-                className="relative rounded-lg shadow-2xl w-full"
-              />
+              <ThreeDCard>
+                <ImageWithFallback
+                  src="/profile-image.png"
+                  alt="Shanmukha Siddhard Sai"
+                  className="relative rounded-lg shadow-2xl w-full"
+                />
+              </ThreeDCard>
             </div>
           </motion.div>
 
